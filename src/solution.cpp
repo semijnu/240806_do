@@ -1,11 +1,15 @@
+```cpp
 #include <iostream>
+#include <string>
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
+class Student {
+    // 코드를 완성해주세요.
+
+};
 
 int main() {
-    std::cout << solution() << std::endl;
+    // 테스트를 위한 코드를 작성해주세요.
     return 0;
 }
+```
+3. 정답 코드
