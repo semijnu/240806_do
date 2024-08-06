@@ -1,11 +1,15 @@
-#include <iostream>
+2. 문제 코드
+```cpp
+#include<iostream>
+#include<string>
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
+using namespace std;
+
+class Employee {
+    // 코드를 작성해 주세요.
+};
 
 int main() {
-    std::cout << solution() << std::endl;
-    return 0;
+    // 코드를 작성해 주세요.
 }
+```
