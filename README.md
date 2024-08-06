@@ -1,8 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 클래스와 객체를 이용하여 은행 계좌를 모델링하는 프로그램을 작성하라. "BankAccount"라는 클래스를 생성하여 두 개의 데이터 멤버인 "accountName"와 "balance"를 선언하라. 다음으로, 생성자, 계좌에 입금(deposit)과 계좌에서 출금(withdraw)을 수행하는 함수를 작성하라. 출금 함수에서는 계좌의 잔액보다 많은 금액을 출금하려는 경우 출금을 거부해야한다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
