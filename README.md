@@ -1,8 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 자연어 문제 설명
+"Book" 클래스를 생성하고, 이 클래스 안에는 두 개의 variable "title"과 "author"가 있습니다. 이 변수들은 모두 string 형식입니다. "Book" 클래스는 두 함수를 가집니다: "setData"와 "getData". "setData"는 인수로 책의 제목과 작가를 받아 그 값을 초기화하고, "getData"는 책의 제목과 작가를 반환합니다. "setData"와 "getData"가 올바르게 작동하는지 테스트하는 메인 함수를 작성하세요.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
