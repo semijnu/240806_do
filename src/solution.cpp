@@ -1,11 +1,32 @@
-#include <iostream>
+2. 문제 코드(프로그램의 대략적인 구조를 보여주는 기본 코드)
+```c++
+#include<iostream>
+#include<string>
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
+class BankAccount {
+private:
+    std::string accountName;
+    int balance;
+
+public:
+    // Constructor
+    BankAccount(std::string name, int initialBalance);
+
+    // Member functions
+    void deposit(int amount);
+    void withdraw(int amount);
+};
 
 int main() {
-    std::cout << solution() << std::endl;
+    // Create an object of BankAccount
+    BankAccount myAccount("My Account", 1000);
+
+    // Test deposit function
+    myAccount.deposit(?);
+
+    // Test withdraw function
+    myAccount.withdraw(?);
+
     return 0;
 }
+```
