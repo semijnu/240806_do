@@ -1,8 +1,16 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 자연어 문제 설명
+C++에서 "학생"이라는 클래스를 만들고, "학생" 객체에서 이름(name), 학년(grade), 학번(id) 값을 처리할 수 있도록 작성해주세요. "학생" 클래스는 다음과 같은 특징을 가져야 합니다:
+- 모든 데이터 멤버는 private로 선언되어야 합니다.
+- 멤버 변수로 이름(name, 문자열), 학년(grade, 정수), 학번(id, 정수)을 포함해야 합니다.
+- 모든 멤버 함수는 public으로 선언되어야 합니다.
+- 디폴트 생성자는 이름을 "unknown", 학년을 1, 학번을 0으로 설정해야 합니다.
+- 모든 변수를 초기화하는 생성자를 통해 객체 생성이 가능해야 합니다.
+- 각 멤버 변수를 설정하고 반환하는 멤버 함수를 포함해야 합니다.
+
+2. 문제 코드(프로그램의 대략적인 구조를 보여주는 기본 코드)
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
