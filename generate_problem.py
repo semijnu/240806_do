@@ -8,7 +8,7 @@ def generate_problem(prompt):
         raise ValueError("API key is missing or invalid")
     openai.api_key = api_key
     
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completion.create(
         model="gpt-4",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
