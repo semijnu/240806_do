@@ -1,8 +1,9 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 자연어 문제 설명
+"Employee"라는 클래스를 생성하고, 이 클래스는 "name", "position", "salary" 세 개의 속성을 갖도록 설정하세요. 생성자를 사용하여 이 세 속성을 초기화 합니다. 이 클래스에는 또한 직원 정보를 출력하는 멤버 함수 "display()"를 포함하도록 합니다. 
+이 프로그램을 실행하면, 사용자에게 직원의 이름, 직책, 그리고 급여 정보를 입력 받으고, 이 정보를 display() 함수를 호출하여 출력합니다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
