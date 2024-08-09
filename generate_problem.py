@@ -8,7 +8,7 @@ def generate_problem(prompt):
         raise ValueError("API key is missing or invalid")
     openai.api_key = api_key
     
-    response = openai.chat.completions.create(
+    response = openai.ChatCompletion.create(
         model="gpt-4",
         messages=[
             {"role": "system", "content": "You are a helpful assistant."},
@@ -31,7 +31,7 @@ def update_files(problem_text):
         readme_file.write(f"# 과제 설명\n\n## 문제 설명\n{problem_description.strip()}\n\n## 제출 방법\n1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.\n2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.\n3. 완료되면, 변경 사항을 커밋하고 푸시하세요.\n")
 
     with open('src/solution.cpp', 'w') as solution_file:
-        solution_file.write(problem_code.strip())
+        solution_file.write(solution_code.strip())
 
     with open('tests/test_solution.cpp', 'w') as test_file:
         test_file.write(test_case_code.strip())
@@ -43,15 +43,9 @@ def compile_and_run_cpp(file_path):
 
     if compile_process.returncode != 0:
         print("컴파일 오류:", compile_process.stderr)
-        return
+        return False
 
-    # Run the compiled program
-    run_process = subprocess.run("./test_program", shell=True, capture_output=True, text=True)
-    
-    if run_process.returncode != 0:
-        print("프로그램 실행 오류:", run_process.stderr)
-    else:
-        print("프로그램 실행 결과:", run_process.stdout)
+    return True
 
 def run_tests():
     # Run the compiled program with each test case
@@ -93,8 +87,7 @@ C++ 프로그래밍 문제를 생성하세요.
 3. 정답 코드
 ---
 
-4. 테스트 케이스(10개에서 20개 정도 생성해줘)
-
+4. 테스트 케이스(10개에서 20개 정도 생성해줘). 각 테스트 케이스는 '입력값 => 예상 출력값' 형식으로 제공해줘
 """  # 닫는 삼중 따옴표
 problem = generate_problem(prompt)
 update_files(problem)
