@@ -1,11 +1,22 @@
+2. 문제 코드
+```
+#include <string>
 #include <iostream>
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
+class Cafe {
+private:
+    std::string drinkName;
+    int price;
+    int stock;
 
-int main() {
-    std::cout << solution() << std::endl;
-    return 0;
-}
+public:
+    Cafe(std::string drinkName, int price, int stock) {
+        // 코드 완성
+    }
+
+    void sell(int amount) {
+        // 코드 완성
+    }
+    
+};
+```
