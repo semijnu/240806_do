@@ -1,11 +1,1 @@
-#include <iostream>
-
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
-
-int main() {
-    std::cout << solution() << std::endl;
-    return 0;
-}
+2. 문제 코드 (프로그램의 대략적인 구조를 보여주는 기본 코드)
