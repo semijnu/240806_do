@@ -53,6 +53,31 @@ def compile_and_run_cpp(file_path):
     else:
         print("프로그램 실행 결과:", run_process.stdout)
 
+def run_tests():
+    # Run the compiled program with each test case
+    with open('tests/test_solution.cpp', 'r') as test_file:
+        test_cases = test_file.readlines()
+    
+    total_tests = len(test_cases)
+    passed_tests = 0
+    
+    for i, test_case in enumerate(test_cases):
+        expected_output = test_case.split('=>')[1].strip()  # Assuming format: "input => expected_output"
+        run_process = subprocess.run(
+            ["./test_program"],
+            input=test_case.split('=>')[0].strip().encode(),
+            capture_output=True,
+            text=True
+        )
+        
+        actual_output = run_process.stdout.strip()
+        if actual_output == expected_output:
+            passed_tests += 1
+        else:
+            print(f"테스트 케이스 {i+1} 실패: 입력={test_case.strip()} 기대값={expected_output}, 결과={actual_output}")
+
+    print(f"{passed_tests}/{total_tests} 테스트 케이스 통과")
+
 prompt = """
 C++ 프로그래밍 문제를 생성하세요.
 문제 범위는 다음과 같습니다.: 자료형, 상수와 변수, 입출력 함수, 조건문, 반복문, 배열, 2차원 배열, 클래스와 객체
@@ -73,3 +98,6 @@ C++ 프로그래밍 문제를 생성하세요.
 """  # 닫는 삼중 따옴표
 problem = generate_problem(prompt)
 update_files(problem)
+
+if compile_and_run_cpp('src/solution.cpp'):
+    run_tests()
