@@ -60,26 +60,32 @@ def compile_and_run_cpp(file_path):
     return True
 
 def run_tests():
-    # Run the compiled program with each test case
+    # Read the test cases from the file
     with open('tests/test_cases.txt', 'r') as test_file:
-        test_cases = test_file.read().strip().split("\n") 
+        raw_test_cases = test_file.read().strip().split("\n")
+
+    test_cases = []
+    current_input = []
+    current_output = None
+
+    for line in raw_test_cases:
+        if line.startswith("입력값:"):
+            current_input.append(line.replace("입력값:", "").strip())
+        elif line.startswith("출력값:"):
+            current_output = line.replace("출력값:", "").strip()
+            if current_input:
+                test_cases.append((current_input, current_output))
+                current_input = []
 
     total_tests = len(test_cases)
     passed_tests = 0
 
-    for i, test_case in enumerate(test_cases):
-        try:
-            input_value, expected_output = map(str.strip, test_case.split('=>'))
-            input_values = input_value.strip()
-            expected_output = expected_output.strip()
+    for i, (input_values, expected_output) in enumerate(test_cases):
+        input_data = "\n".join(input_values) + "\n"
 
-        except ValueError as e:
-            print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()} - {e}")
-            continue
-        
         run_process = subprocess.run(
             ["./test_program"],
-            input=f"{input_data}\n", 
+            input=input_data,  # Provide input as bytes
             capture_output=True,
             text=True
         )
@@ -88,7 +94,7 @@ def run_tests():
         if actual_output == expected_output:
             passed_tests += 1
         else:
-            print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
+            print(f"테스트 케이스 {i+1} 실패: 입력={input_values}, 기대값={expected_output}, 결과={actual_output}")
 
     print(f"{passed_tests}/{total_tests} 테스트 케이스 통과")
 
