@@ -1,1 +1,20 @@
-
+['G', 'R', 'G', 'R', 'G', 'R', 'G', 'R'] => True
+['G', 'L', 'G', 'L', 'G', 'L', 'G', 'L'] => True
+['G', 'G', 'G', 'L'] => False
+['G', 'R', 'L', 'G'] => False
+['G', 'R', 'G', 'R', 'R', 'G', 'L'] => True
+['L', 'G', 'R', 'G', 'L', 'R', 'G', 'R'] => False
+['G', 'R', 'G', 'R', 'G', 'R'] => False
+['G', 'L', 'G', 'L', 'G', 'L'] => False
+['G', 'R', 'L', 'R', 'G', 'L', 'R', 'G'] => True
+['R', 'R', 'R', 'R', 'G', 'G', 'G', 'G'] => True
+['G', 'G', 'L', 'R', 'G', 'G', 'R', 'L'] => True
+['G', 'L', 'R', 'G', 'R', 'L', 'G'] => False
+['G', 'R', 'L', 'G', 'R', 'L', 'G', 'R'] => False
+['G', 'L', 'R', 'L', 'G', 'R', 'L', 'G'] => True
+['G', 'R', 'G', 'L', 'G', 'R', 'G', 'L'] => True
+['G', 'L', 'G', 'R', 'G', 'L', 'G', 'R'] => True
+['G', 'G', 'R', 'R', 'G', 'G', 'L', 'L'] => True
+['G', 'G', 'L', 'L', 'G', 'G', 'R', 'R'] => True
+['R', 'L', 'G', 'R', 'L', 'G', 'R', 'L'] => True
+['L', 'R', 'G', 'L', 'R', 'G', 'L', 'R'] => True
