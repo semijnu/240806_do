@@ -1,8 +1,12 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+자동차를 모델링하는 `Car` 클래스를 작성하려고 합니다. 이 클래스는 자동차의 `색상(color)`, `년식(year)`, `브랜드(brand)`, 그리고 `속도(speed)`를 속성으로 갖고 있습니다. 이전에 정의된 `Car` 클래스를 상속받아 `OffroadCar`로 구현합니다. `OffroadCar`는 `terrain`(지형)이라는 추가적인 속성을 갖습니다.
+다음과 같은 기능을 수행할 수 있어야 합니다:
+- `Car` 클래스는 color, year, brand, speed를 인자로 받는 생성자를 이용해서 초기화 할 수 있어야 한다.
+- `OffroadCar` 클래스는 Car 클래스 속성 외에 `terrain` 속성을 추가적으로 초기화 할 수 있는 생성자를 갖고 있어야 한다.
+- 모든 속성은 private이어야 한다.
+- 각 클래스는 속성의 값을 반환하는 getter 함수와 값을 변경하는 setter 함수를 갖고 있어야 한다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
