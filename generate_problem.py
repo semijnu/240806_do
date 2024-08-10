@@ -69,7 +69,7 @@ def compile_and_run_cpp(file_path, test_file_path):
 
         run_process = subprocess.run(
             ["./test_program"],
-            input=input_data.encode(),  # 인코딩된 입력 데이터 사용
+            input=input_data,
             capture_output=True,
             text=True
         )
