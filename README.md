@@ -1,10 +1,9 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+사용자로부터 두 개의 정수 배열을 입력 받아, 가장 긴 공통 부분 순서열(Longest Common Subsequence, LCS)의 길이를 반환하는 프로그램을 작성하세요. 부분 순서열은 그 자체로 다른 순서가 없이 배열 내에서 임의로 제거될 수 있는요소들을 말합니다.
+배열의 사이즈는 최대 1000입니다. 입력 값은 1과 1000 사이의 양의 정수입니다.
 
 ## 제출 방법
-1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
