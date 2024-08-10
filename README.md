@@ -1,10 +1,11 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+문제:
+다음 프로그램은 주어진 어레이 안에 특정 값 'k'의 모든 인스턴스를 찾고, 가장 왼쪽부터 시작하는 연속적인 모든 'k'의 개수를 출력하는 함수를 포함한다. 이를 'k'의 가장 긴 연속된 시퀀스라고 부른다. 
+즉, 함수 longest_sequence(arr, n, k)는 어레이 'arr'의 크기가 'n'이고, 검색하려는 값이 'k'일 경우, 'k'의 가장 긴 연속 시퀀스를 반환한다. 
+가장 긴 시퀀스가 두 개 이상 존재할 경우, 그 중 가장 먼저 등장하는 시퀀스의 길이를 출력한다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
