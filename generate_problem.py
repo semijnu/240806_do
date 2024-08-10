@@ -78,12 +78,12 @@ def run_tests():
 
     for i, (input_value, expected_output) in enumerate(test_cases):
         # Prepare input data for the C++ program
-        input_data = input_value.strip().replace(' ', '\n') + "\n"
+        input_data = input_value.strip().replace('[', '').replace(']', '').replace(',', '\n') + "\n"
         expected_output = expected_output.strip()
 
         run_process = subprocess.run(
             ["./test_program"],
-            input=f"{len(input_value.split(','))}\n{input_data}".encode('utf-8'),
+            input=input_data.encode('utf-8'),
             capture_output=True,
             text=True
         )
