@@ -27,6 +27,7 @@ def clean_text(text):
             clean_lines.append(line)
     return '\n'.join(clean_lines).strip()
 
+
 def update_files(problem_description, problem_code, solution_code, test_case_code, problem_index):
     with open(f'src/student_{problem_index}.cpp', 'w') as solution_file:
         solution_file.write(problem_code.strip())
@@ -36,6 +37,11 @@ def update_files(problem_description, problem_code, solution_code, test_case_cod
 
     with open(f'tests/test_cases_{problem_index}.txt', 'w') as test_file:
         test_file.write(test_case_code.strip())
+
+    with open('README.md', 'a') as readme_file:
+        readme_file.write(f"## 문제 {problem_index + 1}\n\n")
+        readme_file.write(f"{problem_description.strip()}\n\n---\n\n")
+
 
 def compile_and_run_cpp(file_path, test_file_path):
     # Compile the C++ code
@@ -69,18 +75,19 @@ def compile_and_run_cpp(file_path, test_file_path):
 
         run_process = subprocess.run(
             ["./test_program"],
-            input=input_data,
+            input=input_data, 
             capture_output=True,
             text=True
         )
-        
-        actual_output = run_process.stdout.strip()
+
+        actual_output = run_process.stdout.strip().replace("Enter a number: ", "").replace("Enter two numbers: ", "").replace("Enter three numbers: ", "")
         if actual_output == expected_output:
             passed_tests += 1
         else:
             print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
 
     print(f"{passed_tests}/{total_tests} 테스트 케이스 통과")
+
 
 def main():
     prompts = [
@@ -100,9 +107,8 @@ def main():
 
         int main() {
             int number;
-            cout << "Enter a number: ";
             cin >> number;
-            cout << "The square of " << number << " is: " << square(number) << endl;
+            cout << square(number) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -120,9 +126,8 @@ def main():
 
         int main() {
             int number;
-            cout << "Enter a number: ";
             cin >> number;
-            cout << "The square of " << number << " is: " << square(number) << endl;
+            cout << square(number) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -157,9 +162,8 @@ def main():
 
         int main() {
             int num1, num2;
-            cout << "Enter two numbers: ";
             cin >> num1 >> num2;
-            cout << "The sum is: " << sum(num1, num2) << endl;
+            cout << sum(num1, num2) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -177,9 +181,8 @@ def main():
 
         int main() {
             int num1, num2;
-            cout << "Enter two numbers: ";
             cin >> num1 >> num2;
-            cout << "The sum is: " << sum(num1, num2) << endl;
+            cout << sum(num1, num2) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -214,9 +217,8 @@ def main():
 
         int main() {
             int num1, num2;
-            cout << "Enter two numbers: ";
             cin >> num1 >> num2;
-            cout << "The difference is: " << difference(num1, num2) << endl;
+            cout << difference(num1, num2) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -234,9 +236,8 @@ def main():
 
         int main() {
             int num1, num2;
-            cout << "Enter two numbers: ";
             cin >> num1 >> num2;
-            cout << "The difference is: " << difference(num1, num2) << endl;
+            cout << difference(num1, num2) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -271,9 +272,8 @@ def main():
 
         int main() {
             int num1, num2;
-            cout << "Enter two numbers: ";
             cin >> num1 >> num2;
-            cout << "The product is: " << product(num1, num2) << endl;
+            cout << product(num1, num2) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -291,9 +291,8 @@ def main():
 
         int main() {
             int num1, num2;
-            cout << "Enter two numbers: ";
             cin >> num1 >> num2;
-            cout << "The product is: " << product(num1, num2) << endl;
+            cout << product(num1, num2) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -328,9 +327,8 @@ def main():
 
         int main() {
             int num1, num2, num3;
-            cout << "Enter three numbers: ";
             cin >> num1 >> num2 >> num3;
-            cout << "The maximum is: " << maxOfThree(num1, num2, num3) << endl;
+            cout << maxOfThree(num1, num2, num3) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -350,9 +348,8 @@ def main():
 
         int main() {
             int num1, num2, num3;
-            cout << "Enter three numbers: ";
             cin >> num1 >> num2 >> num3;
-            cout << "The maximum is: " << maxOfThree(num1, num2, num3) << endl;
+            cout << maxOfThree(num1, num2, num3) << endl;  // 프롬프트 메시지를 제거하여 입력과 출력을 간단히 합니다.
             return 0;
         }
         ```
@@ -377,6 +374,10 @@ def main():
         print(f"문제 {idx+1} 생성 및 테스트 시작...")
         problem_text = generate_problem(prompt)
         parts = problem_text.split('---')
+        if len(parts) < 4:
+            print(f"문제 {idx+1} 생성 오류: 생성된 텍스트 형식이 올바르지 않습니다.")
+            continue
+
         problem_description = clean_text(parts[0])
         problem_code = clean_text(parts[1])
         solution_code = clean_text(parts[2])
@@ -387,6 +388,7 @@ def main():
         if compile_and_run_cpp(f'src/solution_{idx}.cpp', f'tests/test_cases_{idx}.txt'):
             run_tests()
         print(f"문제 {idx+1} 완료.\n")
+
 
 if __name__ == "__main__":
     main()
