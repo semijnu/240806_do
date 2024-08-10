@@ -1,11 +1,24 @@
 #include <iostream>
-
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
+#include <vector>
+#include <algorithm>
+using namespace std;
 
 int main() {
-    std::cout << solution() << std::endl;
+    vector<int> numbers;
+
+    for (int i = 0; i < 10; ++i) {
+        int num;
+        cin >> num;
+        numbers.push_back(num);
+    } 
+
+    for (int i = 0; i < 10; ++i) {
+         cout << numbers[i] << " ";
+    }
+
+    auto minmax = minmax_element(numbers.begin(), numbers.end());
+    cout << "\nMinimum Element: " << *minmax.first;
+    cout << "\nMaximum Element: " << *minmax.second;
+
     return 0;
 }
