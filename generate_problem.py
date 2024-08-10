@@ -56,7 +56,11 @@ def run_tests():
     passed_tests = 0
     
     for i, test_case in enumerate(test_cases):
-        expected_output = test_case.split('=>')[1].strip()  # Assuming format: "input => expected_output"
+        try:
+            input_value, expected_output = map(str.strip, test_case.split('=>')) 
+        except ValueError:
+            print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()}")
+            continue
         run_process = subprocess.run(
             ["./test_program"],
             input=test_case.split('=>')[0].strip().encode(),
@@ -75,19 +79,59 @@ def run_tests():
 prompt = """
 C++ 프로그래밍 문제를 생성하세요.
 문제 범위는 다음과 같습니다.: 자료형, 상수와 변수, 입출력 함수, 조건문, 반복문, 배열, 2차원 배열, 클래스와 객체
-클래스와 객체 문제를 생성해주세요.
+클래스와 객체 문제를 생성해주세요. 난이도는 어려운 문제로 설정해주세요.
 아래는 형식을 보여주는 예시 코드입니다. 아래 형식을 지키면서 새로운 문제를 생성해주세요. 문제 생성시 제목은 빼고 생성해주세요(예: 1. 자연어 문제 설명, 문제 코드(프로그램의 대략적인 구조를 보여주는 기본 코드), 3. 정답 코드, 4. 테스트 케이스 등). 
 그리고 ---로 각각의 번호를 구분할겁니다. 각 번호가 끝날 때마다 ---을 넣어주세요. 그 외에는 ---을 추가해서는 안됩니다.:
 1. 자연어 문제 설명
+사용자로부터 정수 하나를 입력 받아 그 정수의 제곱을 계산하여 출력하는 프로그램을 작성하시오. 이때 입력은 정수형으로 주어집니다.
 ---
 
 2. 문제 코드(프로그램의 대략적인 구조를 보여주는 기본 코드)
+#include <iostream>
+using namespace std;
+
+int square(int n) {
+    // 여기에 코드를 작성하세요.
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    cout << "The square of " << number << " is: " << square(number) << endl;
+    return 0;
+}
 ---
 
 3. 정답 코드
+#include <iostream>
+using namespace std;
+
+int square(int n) {
+    return n * n;
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    cout << "The square of " << number << " is: " << square(number) << endl;
+    return 0;
+}
+
 ---
 
 4. 테스트 케이스(10개에서 20개 정도 생성해줘). 각 테스트 케이스는 '입력값 => 예상 출력값' 형식으로 제공해줘
+5 => 25
+10 => 100
+-3 => 9
+7 => 49
+0 => 0
+1 => 1
+-10 => 100
+15 => 225
+20 => 400
+-5 => 25
 """  # 닫는 삼중 따옴표
 problem = generate_problem(prompt)
 update_files(problem)
