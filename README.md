@@ -1,10 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+페르마의 소정리는 모듈로 어떤 소수의 집합에서 정수의 'p-1' 제곱사 모듈로 p하면 여전히 해당 정수를 얻을 수 있다는 정리입니다. a^(p-1) ≡ 1 (mod p). 이 문제에서 모듈로 연산 결과가 1이 될 수 있는 소수 p와 정수 a를 찾는 프로그램을 작성하세요. 여기서 a는 1과 5000 사이의 정수로 하고, p는 2와 10000 사이의 소수로 합니다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
