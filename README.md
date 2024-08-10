@@ -1,8 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+프로그램 사용자가 분수들의 리스트를 제공하면, 이 분수들의 합을 단순화된 형태로 반환하는 프로그램을 작성하시오. 분수는 string 형태로 제공되며, 분자와 분모는 '/' 문자로 구분된다. 분모는 0이 아니라는 가정으로 시작합니다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
