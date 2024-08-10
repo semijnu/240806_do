@@ -1,10 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+C++로 프로그램을 작성해 주세요. 이 프로그램은 사용자로부터 얻은 정수 배열을 기반으로 모든 소수의 합계를 계산해야합니다. 소수는 1과 자기 자신만으로 나누어 떨어지는 수를 말하고, 1은 소수가 아닙니다. 배열 내 모든 소수의 합을 반환하는 함수를 구현해야 합니다.
 
 ## 제출 방법
-1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
