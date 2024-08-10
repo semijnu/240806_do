@@ -66,8 +66,9 @@ def run_tests():
 
     for i, test_case in enumerate(test_cases):
         try:
-            input_value, expected_output = map(str.strip, test_case.split('=>'))  # 입력과 기대 출력을 분리
-            expected_output = expected_output.replace('\\n', '\n').replace('\\t', '\t').strip()
+            input_value, expected_output = map(str.strip, test_case.split('=>'))
+            input_value = input_value.replace("입력값:", "").strip().replace("\\n", "\n")
+            expected_output = expected_output.strip().replace("\\n", "\n")
         except ValueError:
             print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()}")
             continue
