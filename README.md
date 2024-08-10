@@ -1,8 +1,14 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 자연어 문제 설명
+"Polygon"이라는 클래스를 생성하세요. 이 클래스는 "sides"라는 int형 배열을 가지고 있어야 합니다. 이 배열은 다각형의 각 변의 길이를 저장합니다. 이 클래스는 팔각형, 삼각형, 사각형 등의 다양한 다각형을 표현할 수 있어야 합니다.
+
+다음의 메서드를 구현해야 합니다:
+
+- "setSides" 메서드: 사용자로부터 N개의 정수를 입력받아 변의 길이를 설정하세요. (N은 다각형의 변의 개수)
+- "perimeter" 메서드: 다각형의 둘레를 계산하세요.
+- "display" 메서드: 다각형의 변의 길이를 출력하세요.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
