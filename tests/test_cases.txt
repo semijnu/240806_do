@@ -1,1 +1,7 @@
+예상 출력값: 60
 
+
+5
+예상 출력값: 1000
+
+-- More test cases can be added here.

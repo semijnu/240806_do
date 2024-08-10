@@ -1,10 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+최대 코스트를 구하는 C++ 프로그램을 작성하세요. 
+주어진 트리의 노드들은 각각의 비용 값을 가지고 있습니다. 시작 노드에서 출발하여 도착 노드까지 가는 경로 중에서 코스트가 가장 큰 경로의 코스트를 출력하는 프로그램을 작성하세요. 트리의 노드는 1부터 n까지의 숫자로 표현됩니다. 해당 문제는 그래프 이론에 기반을 두고 있습니다.
+트리의 정보와 시작 노드, 도착 노드가 주어집니다.
 
 ## 제출 방법
-1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
