@@ -421,7 +421,7 @@ def main():
         update_files(problem_description, problem_code, solution_code, test_case_code, idx)
 
         print(f"문제 {idx+1} 컴파일 및 테스트 실행...")
-        if compile_and_run_cpp(f'src/solution_{idx}.cpp', f'tests/test_cases_{idx}.txt'):
+        if compile_and_run_cpp(f'src/solution_{idx}.cpp', f'tests/test_cases_{idx}.txt', idx):
             run_tests()
         print(f"문제 {idx+1} 완료.\n")
 
