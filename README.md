@@ -1,8 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 자연어 문제 설명
+"Cars"라는 클래스를 만들어서 차량에 대한 정보를 관리해보겠습니다. "Cars" 클래스는 모델이름(model_name), 가격(price), 인원수(seat_num)을 멤버로 가지고 있어야 합니다. 초기화 할 때 매개변수로 모델이름, 가격, 인원수를 전달받아 멤버들을 초기화 하게 하는 생성자를 작성해주세요. 또한, 각 멤버 변수에 대한 getter와 setter 함수를 작성하고, showInfo()라는 메서드를 사용하여 자동차의 정보를 출력하도록 합니다(문자열 출력 형식 : "Model: [모델이름], Price: [가격], Seats: [인원수]").
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
