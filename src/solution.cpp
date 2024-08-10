@@ -1,11 +1,26 @@
-#include <iostream>
+#include<iostream>
+using namespace std;
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
+int andOperation(int a, int b) {
+    return a & b;
+}
+
+int orOperation(int a, int b) {
+    return a | b;
+}
+
+int xorOperation(int a, int b) {
+    return a ^ b;
 }
 
 int main() {
-    std::cout << solution() << std::endl;
+    int num1, num2;
+    cout << "Enter first number: ";
+    cin >> num1;
+    cout << "Enter second number: ";
+    cin >> num2;
+    cout << "AND operation: " << andOperation(num1, num2) << endl;
+    cout << "OR operation: " << orOperation(num1, num2) << endl;
+    cout << "XOR operation: " << xorOperation(num1, num2) << endl;
     return 0;
 }
