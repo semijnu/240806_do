@@ -1,0 +1,2 @@
+- 정답 코드를 제공하는 경우 적절한 테스트 케이스를 생성하는 것은 어려울 수 있습니다. 이 문제의 경우, 각 함수가 올바르게 작동하는지 확인하려면 코드를 리뷰하거나 디버깅해야합니다.
+Sites such as Codewars or HackerRank provide a platform where you can check the correctness of your code.
