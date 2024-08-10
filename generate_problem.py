@@ -62,39 +62,37 @@ def compile_and_run_cpp(file_path):
 def run_tests():
     # Read the test cases from the file
     with open('tests/test_cases.txt', 'r') as test_file:
-        raw_test_cases = test_file.read().strip().split("\n")
+        raw_test_cases = test_file.read().strip().split("\n\n")
 
     test_cases = []
-    current_input = []
-    current_output = None
+    for raw_test_case in raw_test_cases:
+        if '=>' not in raw_test_case:
+            print(f"테스트 케이스 형식 오류: {raw_test_case.strip()}")
+            continue
 
-    for line in raw_test_cases:
-        if line.startswith("입력값:"):
-            current_input.append(line.replace("입력값:", "").strip())
-        elif line.startswith("출력값:"):
-            current_output = line.replace("출력값:", "").strip()
-            if current_input:
-                test_cases.append((current_input, current_output))
-                current_input = []
+        input_value, expected_output = map(str.strip, raw_test_case.split('=>'))
+        test_cases.append((input_value, expected_output))
 
     total_tests = len(test_cases)
     passed_tests = 0
 
-    for i, (input_values, expected_output) in enumerate(test_cases):
-        input_data = "\n".join(input_values) + "\n"
+    for i, (input_value, expected_output) in enumerate(test_cases):
+        # Prepare input data for the C++ program
+        input_data = input_value.replace("입력값:", "").strip().replace(' ', '\n') + "\n"
+        expected_output = expected_output.replace("예상 출력값:", "").strip().split()
 
         run_process = subprocess.run(
             ["./test_program"],
-            input=input_data,  # Provide input as bytes
+            input=input_data.encode(),
             capture_output=True,
             text=True
         )
         
-        actual_output = run_process.stdout.strip()
+        actual_output = run_process.stdout.strip().split()
         if actual_output == expected_output:
             passed_tests += 1
         else:
-            print(f"테스트 케이스 {i+1} 실패: 입력={input_values}, 기대값={expected_output}, 결과={actual_output}")
+            print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
 
     print(f"{passed_tests}/{total_tests} 테스트 케이스 통과")
 
