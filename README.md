@@ -1,10 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+n 개의 정수가 주어지면 이들을 오름차순으로 정렬하는 소팅 알고리즘의 C++ 구현을 작성하라. 프로그램은 사용자로부터 숫자를 입력 받고, 입력된 숫자를 오름차순으로 정렬하여 결과를 출력한다. 이때, 숫자는 공백으로 구분되며 빈 줄로 입력 완료를 알린다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
