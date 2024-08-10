@@ -34,7 +34,7 @@ def update_files(problem_text):
         print("생성된 텍스트:", problem_text)
         raise ValueError("생성된 문제 텍스트 형식이 올바르지 않습니다.")
     
-    problem_description, problem_code, solution_code, test_case_code = map(clean_code, parts[:4])
+    problem_description, problem_code, solution_code, test_case_code = map(clean_text, parts[:4])
 
     with open('README.md', 'w') as readme_file:
         readme_file.write(f"# 과제 설명\n\n## 문제 설명\n{problem_description.strip()}\n\n## 제출 방법\n1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.\n2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.\n3. 완료되면, 변경 사항을 커밋하고 푸시하세요.\n")
