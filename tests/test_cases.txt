@@ -1,1 +1,16 @@
-
+테스트 케이스:
+"RaceCar" => "RaceCar is a palindrome"
+"Hello" => "Hello is not a palindrome"
+"madam" => "madam is a palindrome"
+"WoW" => "WoW is a palindrome"
+"Test" => "Test is not a palindrome"
+"rotator" => "rotator is a palindrome"
+"DeeD" => "DeeD is a palindrome"
+"Apple" => "Apple is not a palindrome"
+"Noon" => "Noon is a palindrome"
+"Civic" => "Civic is a palindrome"
+"Cpp" => "Cpp is not a palindrome"
+"level" => "level is a palindrome"
+"Coder" => "Coder is not a palindrome"
+"Aha" => "Aha is a palindrome"
+"Peep" => "Peep is a palindrome"
