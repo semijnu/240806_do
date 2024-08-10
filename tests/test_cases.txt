@@ -1,1 +1,7 @@
-
+50 500 => 496 is a perfect number.
+5000 6000 =>  No output.
+500 1000 =>  No output.
+500 2000 => 496 is a perfect number.
+500 600 =>  No output.
+600 800 =>  No output.
+800 900 =>  No output.
