@@ -86,7 +86,15 @@ def compile_and_run_cpp(file_path, test_file_path):
         else:
             print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
 
-    print(f"{passed_tests}/{total_tests} 테스트 케이스 통과")
+        result_summary = f"{passed_tests}/{total_tests} 테스트 케이스 통과"
+        test_results.append(result_summary)
+
+        # Append test results to README.md
+        with open('README.md', 'a') as readme_file:
+            readme_file.write(f"### 문제 {problem_index + 1} 테스트 결과\n")
+            readme_file.write("\n".join(test_results) + "\n\n---\n\n")
+
+        print(result_summary)
 
 
 def main():
