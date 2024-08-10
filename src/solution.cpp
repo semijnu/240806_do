@@ -1,11 +1,1 @@
-#include <iostream>
-
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
-}
-
-int main() {
-    std::cout << solution() << std::endl;
-    return 0;
-}
+여기에 제출해야하는 정답 코드는 없습니다. 크기가 m x n인 2차원 배열의 Bubble Sort 알고리즘 구현은 복잡하고 그 밖에 다양한 방법이 있기 때문입니다.
