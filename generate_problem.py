@@ -37,7 +37,10 @@ def update_files(problem_text):
     problem_description, problem_code, solution_code, test_case_code = map(clean_text, parts[:4])
 
     with open('README.md', 'w') as readme_file:
-        readme_file.write(f"# 과제 설명\n\n## 문제 설명\n{problem_description.strip()}\n\n## 제출 방법\n1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.\n2. 완료되면, 변경 사항을 커밋하고 푸시하세요.\n")
+        readme_file.write(f"# 과제 설명\n\n## 문제 설명\n{problem_description.strip()}\n\n## 제출 방법\n1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.\n2. 완료되면, 변경 사항을 커밋하고 푸시하세요.\n")
+
+    with open('src/student.cpp', 'w') as solution_file:
+        solution_file.write(problem_code.strip())
 
     with open('src/solution.cpp', 'w') as solution_file:
         solution_file.write(solution_code.strip())
@@ -59,7 +62,7 @@ def compile_and_run_cpp(file_path):
 def run_tests():
     # Run the compiled program with each test case
     with open('tests/test_cases.txt', 'r') as test_file:
-        test_cases = test_file.read().strip().split("\n\n")  # 빈 줄로 구분
+        test_cases = test_file.read().strip().split("\n") 
 
     total_tests = len(test_cases)
     passed_tests = 0
@@ -67,11 +70,8 @@ def run_tests():
     for i, test_case in enumerate(test_cases):
         try:
             input_value, expected_output = map(str.strip, test_case.split('=>'))
-            input_values = input_value.replace("입력값:", "").strip().split(',')
-            expected_outputs = expected_output.replace("예상 출력값:", "").strip().split(',')
-
-            # Prepare input data for the C++ program
-            input_data = "\n".join(input_values)
+            input_values = input_value.strip()
+            expected_output = expected_output.strip()
 
         except ValueError as e:
             print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()} - {e}")
@@ -79,14 +79,13 @@ def run_tests():
         
         run_process = subprocess.run(
             ["./test_program"],
-            input=f"{input_data}\n".encode(),  # 입력을 바이트로 직접 제공
+            input=f"{input_data}\n", 
             capture_output=True,
             text=True
         )
         
-        actual_output = run_process.stdout.strip().split('\n')
-        if len(actual_output) == len(expected_outputs) and all(
-            act.strip() == exp.strip() for act, exp in zip(actual_output, expected_outputs)):
+        actual_output = run_process.stdout.strip()
+        if actual_output == expected_output:
             passed_tests += 1
         else:
             print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
