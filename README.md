@@ -1,10 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+다음은 행렬 곱셈에 관한 문제입니다. 사용자는 두 개의 행렬을 입력으로 주고 이 두 행렬을 곱한 결과를 출력해야 합니다. 각 행렬은 먼저 행의 수 m과 열의 수 n을 입력으로 받고, 다음으로 m*n개의 정수를 입력 받아서 행렬을 형성합니다. 행렬 곱셈을 수행하려면 첫 번째 행렬의 열의 수와 두 번째 행렬의 행의 수가 일치해야 함을 주의하세요.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
