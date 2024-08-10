@@ -59,7 +59,7 @@ def compile_and_run_cpp(file_path):
 def run_tests():
     # Run the compiled program with each test case
     with open('tests/test_cases.txt', 'r') as test_file:
-        test_cases = test_file.read().strip().split("\n\n") 
+        test_cases = test_file.read().strip().split("\n\n")  # 빈 줄로 구분
 
     total_tests = len(test_cases)
     passed_tests = 0
@@ -67,21 +67,26 @@ def run_tests():
     for i, test_case in enumerate(test_cases):
         try:
             input_value, expected_output = map(str.strip, test_case.split('=>'))
-            input_value = input_value.replace("입력값:", "").strip().replace("\\n", "\n")
-            expected_output = expected_output.strip().replace("\\n", "\n")
+            input_values = input_value.replace("입력값:", "").strip().split(',')
+            expected_outputs = expected_output.replace("예상 출력값:", "").strip().split(',')
+
+            # Prepare input data for the C++ program
+            input_data = "\n".join(input_values)
+
         except ValueError:
             print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()}")
             continue
         
         run_process = subprocess.run(
             ["./test_program"],
-            input=input_value.encode(),
+            input=f"{input_data}\n".encode(),  # 입력을 바이트로 직접 제공
             capture_output=True,
             text=True
         )
         
-        actual_output = run_process.stdout.strip()
-        if actual_output == expected_output:
+        actual_output = run_process.stdout.strip().split('\n')
+        if len(actual_output) == len(expected_outputs) and all(
+            act.strip() == exp.strip() for act, exp in zip(actual_output, expected_outputs)):
             passed_tests += 1
         else:
             print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
