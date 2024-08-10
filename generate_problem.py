@@ -83,7 +83,7 @@ def run_tests():
 
         run_process = subprocess.run(
             ["./test_program"],
-            input=input_data.encode('utf-8'),
+            input=input_data,
             capture_output=True,
             text=True
         )
