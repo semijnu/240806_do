@@ -8,3 +8,27 @@
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
 2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
 3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+## 문제 1
+
+Write a program that takes an integer input and computes it square. The input is given as an integer.
+
+---
+
+## 문제 3
+
+Write a program that takes two integers as input from a user and calculates the difference between those two integers and outputs the result.
+
+---
+
+## 문제 4
+
+Write a program that receives two integers from the user and calculates and outputs the product of the two integers.
+
+---
+
+## 문제 5
+
+Write a program that takes three integers from the user and outputs the largest number.
+
+---
+
