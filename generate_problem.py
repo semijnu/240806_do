@@ -23,7 +23,7 @@ def clean_text(text):
     lines = text.split('\n')
     clean_lines = []
     for line in lines:
-        if not line.strip().startswith(tuple(map(str, range(1, 5)))) and not line.strip().startswith('```'):
+        if not line.strip().startswith(('1.', '2.', '3.', '4.')) and not line.strip().startswith('```'):
             clean_lines.append(line)
     return '\n'.join(clean_lines).strip()
 
@@ -198,13 +198,189 @@ def main():
         50,50 => 100
         -100,100 => 0
         """,
-        # ... 추가적인 문제들을 이와 같은 형식으로 생성하세요 ...
+        """
+        1. 자연어 문제 설명
+        사용자로부터 두 개의 정수를 입력받아 두 정수의 차를 계산하여 출력하는 프로그램을 작성하시오.
+        ---
+
+        2. 문제 코드
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        int difference(int a, int b) {
+            // 여기에 코드를 작성하세요.
+        }
+
+        int main() {
+            int num1, num2;
+            cout << "Enter two numbers: ";
+            cin >> num1 >> num2;
+            cout << "The difference is: " << difference(num1, num2) << endl;
+            return 0;
+        }
+        ```
+
+        ---
+
+        3. 정답 코드
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        int difference(int a, int b) {
+            return a - b;
+        }
+
+        int main() {
+            int num1, num2;
+            cout << "Enter two numbers: ";
+            cin >> num1 >> num2;
+            cout << "The difference is: " << difference(num1, num2) << endl;
+            return 0;
+        }
+        ```
+
+        ---
+
+        4. 테스트 케이스
+        5,3 => 2
+        20,10 => 10
+        1,1 => 0
+        7,8 => -1
+        0,0 => 0
+        -5,5 => -10
+        200,100 => 100
+        456,123 => 333
+        50,25 => 25
+        -100,50 => -150
+        """,
+        """
+        1. 자연어 문제 설명
+        사용자로부터 두 개의 정수를 입력받아 두 정수의 곱을 계산하여 출력하는 프로그램을 작성하시오.
+        ---
+
+        2. 문제 코드
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        int product(int a, int b) {
+            // 여기에 코드를 작성하세요.
+        }
+
+        int main() {
+            int num1, num2;
+            cout << "Enter two numbers: ";
+            cin >> num1 >> num2;
+            cout << "The product is: " << product(num1, num2) << endl;
+            return 0;
+        }
+        ```
+
+        ---
+
+        3. 정답 코드
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        int product(int a, int b) {
+            return a * b;
+        }
+
+        int main() {
+            int num1, num2;
+            cout << "Enter two numbers: ";
+            cin >> num1 >> num2;
+            cout << "The product is: " << product(num1, num2) << endl;
+            return 0;
+        }
+        ```
+
+        ---
+
+        4. 테스트 케이스
+        5,3 => 15
+        2,10 => 20
+        1,1 => 1
+        7,8 => 56
+        0,10 => 0
+        -5,5 => -25
+        10,10 => 100
+        6,7 => 42
+        50,2 => 100
+        -10,5 => -50
+        """,
+        """
+        1. 자연어 문제 설명
+        사용자로부터 세 개의 정수를 입력받아 가장 큰 수를 출력하는 프로그램을 작성하시오.
+        ---
+
+        2. 문제 코드
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        int maxOfThree(int a, int b, int c) {
+            // 여기에 코드를 작성하세요.
+        }
+
+        int main() {
+            int num1, num2, num3;
+            cout << "Enter three numbers: ";
+            cin >> num1 >> num2 >> num3;
+            cout << "The maximum is: " << maxOfThree(num1, num2, num3) << endl;
+            return 0;
+        }
+        ```
+
+        ---
+
+        3. 정답 코드
+        ```cpp
+        #include <iostream>
+        using namespace std;
+
+        int maxOfThree(int a, int b, int c) {
+            if (a > b && a > c) return a;
+            if (b > a && b > c) return b;
+            return c;
+        }
+
+        int main() {
+            int num1, num2, num3;
+            cout << "Enter three numbers: ";
+            cin >> num1 >> num2 >> num3;
+            cout << "The maximum is: " << maxOfThree(num1, num2, num3) << endl;
+            return 0;
+        }
+        ```
+
+        ---
+
+        4. 테스트 케이스
+        1,2,3 => 3
+        3,2,1 => 3
+        5,5,5 => 5
+        0,-1,1 => 1
+        -10,-5,-1 => -1
+        100,50,25 => 100
+        123,456,789 => 789
+        -5,0,5 => 5
+        50,50,100 => 100
+        9,9,8 => 9
+        """
     ]
 
     for idx, prompt in enumerate(prompts):
         print(f"문제 {idx+1} 생성 및 테스트 시작...")
         problem_text = generate_problem(prompt)
-        problem_description, problem_code, solution_code, test_case_code = problem_text.split('---')
+        parts = problem_text.split('---')
+        problem_description = clean_text(parts[0])
+        problem_code = clean_text(parts[1])
+        solution_code = clean_text(parts[2])
+        test_case_code = clean_text(parts[3])
         update_files(problem_description, problem_code, solution_code, test_case_code, idx)
 
         print(f"문제 {idx+1} 컴파일 및 테스트 실행...")
