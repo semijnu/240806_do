@@ -58,18 +58,20 @@ def compile_and_run_cpp(file_path):
 
 def run_tests():
     # Run the compiled program with each test case
-    with open('tests/test_solution.cpp', 'r') as test_file:
-        test_cases = test_file.readlines()
-    
+    with open('tests/test_cases.txt', 'r') as test_file:
+        test_cases = test_file.read().strip().split("\n\n") 
+
     total_tests = len(test_cases)
     passed_tests = 0
-    
+
     for i, test_case in enumerate(test_cases):
         try:
-            input_value, expected_output = map(str.strip, test_case.split('=>')) 
+            input_value, expected_output = map(str.strip, test_case.split('=>'))  # 입력과 기대 출력을 분리
+            expected_output = expected_output.replace('\\n', '\n').replace('\\t', '\t').strip()
         except ValueError:
             print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()}")
             continue
+        
         run_process = subprocess.run(
             ["./test_program"],
             input=input_value.encode(),
@@ -81,7 +83,7 @@ def run_tests():
         if actual_output == expected_output:
             passed_tests += 1
         else:
-            print(f"테스트 케이스 {i+1} 실패: 입력={test_case.strip()} 기대값={expected_output}, 결과={actual_output}")
+            print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
 
     print(f"{passed_tests}/{total_tests} 테스트 케이스 통과")
 
