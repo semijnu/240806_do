@@ -1,8 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+재귀를 사용하여, 입력된 문자열에 포함된 여는 괄호 "("와 닫는 괄호 ")"의 짝이 항상 잘 맞는지 검증하는 C++ 프로그램을 작성하시오. 검증 결과는 boolean 값 (true/false)으로 출력됩니다. 또한 프로그램은 이른 종료(Early termination)를 지원해야 합니다. 즉, 유효하지 않은 괄호를 발견하면 즉시 검증을 중단하고 결과를 출력해야합니다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
