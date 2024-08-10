@@ -73,8 +73,8 @@ def run_tests():
             # Prepare input data for the C++ program
             input_data = "\n".join(input_values)
 
-        except ValueError:
-            print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()}")
+        except ValueError as e:
+            print(f"테스트 케이스 {i+1} 형식 오류: {test_case.strip()} - {e}")
             continue
         
         run_process = subprocess.run(
