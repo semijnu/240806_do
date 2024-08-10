@@ -1,11 +1,20 @@
-#include <iostream>
+#include<iostream>
+#define MOD 1000000007
+using namespace std;
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
+long long get_sum(int n) {
+    long long sum = 0;
+    long long two = 1;
+    for(int i=1; i<=n; i++){
+        two = (two*2) % MOD;
+        if(two % 9 != 0) sum = (sum + two) % MOD;
+    }
+    return sum;
 }
 
-int main() {
-    std::cout << solution() << std::endl;
-    return 0;
+int main(){
+   int n;
+   cin>>n;
+   cout<<get_sum(n)<<endl;
+   return 0;
 }
