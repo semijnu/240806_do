@@ -43,9 +43,9 @@ def update_files(problem_description, problem_code, solution_code, test_case_cod
         readme_file.write(f"{problem_description.strip()}\n\n---\n\n")
 
 
-def compile_and_run_cpp(file_path, test_file_path):
+def compile_and_run_cpp(file_path, test_file_path, problem_index):
     # Compile the C++ code
-    compile_command = f"g++ {file_path} -o test_program"
+    compile_command = f"g++ {file_path} -o test_program_{problem_index}"
     compile_process = subprocess.run(compile_command, shell=True, capture_output=True, text=True)
 
     if compile_process.returncode != 0:
@@ -68,7 +68,7 @@ def compile_and_run_cpp(file_path, test_file_path):
     total_tests = len(test_cases)
     passed_tests = 0
 
-    test_results = []
+    test_results = []  # Collect results to append to README.md
 
     for i, (input_value, expected_output) in enumerate(test_cases):
         # Prepare input data for the C++ program
@@ -76,7 +76,7 @@ def compile_and_run_cpp(file_path, test_file_path):
         expected_output = expected_output.strip()
 
         run_process = subprocess.run(
-            ["./test_program"],
+            [f"./test_program_{problem_index}"],
             input=input_data, 
             capture_output=True,
             text=True
@@ -89,15 +89,15 @@ def compile_and_run_cpp(file_path, test_file_path):
         else:
             test_results.append(f"테스트 케이스 {i+1}: 실패 (입력: {input_value}, 기대값: {expected_output}, 결과: {actual_output})")
 
-        result_summary = f"{passed_tests}/{total_tests} 테스트 케이스 통과"
-        test_results.append(result_summary)
+    result_summary = f"{passed_tests}/{total_tests} 테스트 케이스 통과"
+    test_results.append(result_summary)
 
-        # Append test results to README.md
-        with open('README.md', 'a') as readme_file:
-            readme_file.write(f"### 문제 {problem_index + 1} 테스트 결과\n")
-            readme_file.write("\n".join(test_results) + "\n\n---\n\n")
+    # Append test results to README.md
+    with open('README.md', 'a') as readme_file:
+        readme_file.write(f"### 문제 {problem_index + 1} 테스트 결과\n")
+        readme_file.write("\n".join(test_results) + "\n\n---\n\n")
 
-        print(result_summary)
+    print(result_summary)
 
 
 def main():
