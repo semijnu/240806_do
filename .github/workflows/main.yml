@@ -46,7 +46,7 @@ jobs:
         git checkout -b $NEW_BRANCH
         
         # Add and commit changes
-        git add README.md src/solution.cpp tests/test_cases.txt
+        git add README.md src/student.cpp src/solution.cpp tests/test_cases.txt
         git commit -m "Add generated problem"
         
         # Push the changes to the new branch
