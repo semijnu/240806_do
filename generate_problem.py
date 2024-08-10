@@ -62,7 +62,7 @@ def compile_and_run_cpp(file_path):
 def run_tests():
     # Read the test cases from the file
     with open('tests/test_cases.txt', 'r') as test_file:
-        raw_test_cases = test_file.read().strip().split("\n\n")
+        raw_test_cases = test_file.read().strip().split("\n")
 
     test_cases = []
     for raw_test_case in raw_test_cases:
@@ -78,17 +78,17 @@ def run_tests():
 
     for i, (input_value, expected_output) in enumerate(test_cases):
         # Prepare input data for the C++ program
-        input_data = input_value.replace("입력값:", "").strip().replace(' ', '\n') + "\n"
-        expected_output = expected_output.replace("예상 출력값:", "").strip().split()
+        input_data = input_value.strip().replace(' ', '\n') + "\n"
+        expected_output = expected_output.strip()
 
         run_process = subprocess.run(
             ["./test_program"],
-            input=input_data.encode(),
+            input=f"{len(input_value.split(','))}\n{input_data}".encode(),
             capture_output=True,
             text=True
         )
         
-        actual_output = run_process.stdout.strip().split()
+        actual_output = run_process.stdout.strip()
         if actual_output == expected_output:
             passed_tests += 1
         else:
@@ -142,7 +142,7 @@ int main() {
 
 ---
 
-4. 테스트 케이스
+4. 테스트 케이스(10개에서 20개 정도 생성. '입력값 => 예상 출력값' 형식)
 5 => 25
 10 => 100
 -3 => 9
