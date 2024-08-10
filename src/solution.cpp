@@ -1,11 +1,24 @@
 #include <iostream>
+#include <string>
+using namespace std;
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
+string createString(int n) {
+    string result = "";
+    for(int i = 0; i < n; i++){
+        if(i%2 == 0){
+            result += "prime ";
+        } else {
+            result += "composite ";
+        }
+    }
+    return result;
 }
 
 int main() {
-    std::cout << solution() << std::endl;
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    string answer = createString(number);
+    cout << "The sequence is: " << answer << endl;
     return 0;
 }
