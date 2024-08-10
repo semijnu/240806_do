@@ -1,11 +1,28 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-int solution() {
-    // 여기에 코드를 작성하세요
-    return 0;
+vector<int> sortNumbers(vector<int> numbers) {
+  sort(numbers.begin(), numbers.end());
+  return numbers;
 }
 
 int main() {
-    std::cout << solution() << std::endl;
-    return 0;
+  vector<int> numbers;
+  int number;
+
+  cout << "Enter numbers (finish input by entering an empty line): " << endl;
+  
+  while (cin >> number)
+    numbers.push_back(number);
+
+  numbers = sortNumbers(numbers);
+
+  cout << "Sorted numbers are: ";
+  
+  for (int i = 0; i < numbers.size(); i++)
+    cout << numbers[i] << " ";
+    
+  return 0;
 }
