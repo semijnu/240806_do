@@ -1,1 +1,5 @@
-
+5 => 'prime composite prime composite prime '
+6 => 'prime composite prime composite prime composite '
+7 => 'prime composite prime composite prime composite prime '
+8 => 'prime composite prime composite prime composite prime composite '
+9 => 'prime composite prime composite prime composite prime composite prime '
