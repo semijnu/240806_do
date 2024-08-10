@@ -1,10 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+자연어 문제 설명
+숫자 N를 입력으로 받으면, N 이하의 피보나치 수열 중에서 짝수 항의 합을 계산하는 프로그램을 작성하시오. 수열의 첫 번째와 두 번째 항은 각각 1, 2입니다.
+여기서, 항 한 개씩 추가해서 피보나치 수열을 생성하는 방식을 사용합니다. 다음 항은 항상 두 개의 바로 이전 항의 합입니다.
 
 ## 제출 방법
-1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
