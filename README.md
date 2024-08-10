@@ -1,8 +1,7 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+당신은 라이브러리를 관리하는 프로그램을 만드는 프로그래머입니다. 사용자로부터 가져온 정보를 사용하여 책이 라이브러리에 어떻게 배열되는지 시뮬레이션해야 합니다. 각 책은 이름과 몇 페이지인지 나타내는 정보를 가지고 있으며, 책은 페이지 수 순서대로 정렬됩니다. 이때 "Book" 클래스를 생성하고 책 객체를 생성한 뒤, 책 이름과 페이지 수를 설정하고, 책을 페이지 수순으로 정렬하는 함수를 작성해주세요.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
