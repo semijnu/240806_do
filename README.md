@@ -1,10 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+주어진 행렬을 시계 방향으로 90도 회전하는 프로그램을 작성하시오. 행렬이 주어졌을 때, 회전된 행렬을 출력합니다. 이때, 행렬은 2차원 정수 배열로 표시되며, 배열의 모든 요소는 0 이상 100 이하의 정수입니다.
 
 ## 제출 방법
-1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
