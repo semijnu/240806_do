@@ -68,6 +68,8 @@ def compile_and_run_cpp(file_path, test_file_path):
     total_tests = len(test_cases)
     passed_tests = 0
 
+    test_results = []
+
     for i, (input_value, expected_output) in enumerate(test_cases):
         # Prepare input data for the C++ program
         input_data = input_value.strip().replace('[', '').replace(']', '').replace(',', '\n') + "\n"
@@ -80,11 +82,12 @@ def compile_and_run_cpp(file_path, test_file_path):
             text=True
         )
 
-        actual_output = run_process.stdout.strip().replace("Enter a number: ", "").replace("Enter two numbers: ", "").replace("Enter three numbers: ", "")
+        actual_output = run_process.stdout.strip()
         if actual_output == expected_output:
             passed_tests += 1
+            test_results.append(f"테스트 케이스 {i+1}: 성공 (입력: {input_value}, 결과: {actual_output})")
         else:
-            print(f"테스트 케이스 {i+1} 실패: 입력={input_value}, 기대값={expected_output}, 결과={actual_output}")
+            test_results.append(f"테스트 케이스 {i+1}: 실패 (입력: {input_value}, 기대값: {expected_output}, 결과: {actual_output})")
 
         result_summary = f"{passed_tests}/{total_tests} 테스트 케이스 통과"
         test_results.append(result_summary)
