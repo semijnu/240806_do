@@ -1,8 +1,9 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+사용자로부터 버킷 프로토콜과 항목이 있음을 가진 버킷이 주어지며, 사용자는 동적 할당 배열을 사용하여 버킷이 들어있는 항목을 검색합니다.
+사용자가 검색하려는 값이 버킷에 존재한다면, 그 인덱스를 반환하는 프로그램을 작성하십시오. 그러나 찾고자 하는 값이 없는 경우 -1을 반환해야 합니다.
+프로그램은 입력 값을 요구하지 않으며 모든 테스트는 하드 코딩 된 값으로 구성됩니다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
