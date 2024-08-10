@@ -1,10 +1,8 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+바이너리 트리 데이터 구조를 통해 주어진 노드 배열로 트리를 구성한 후, 트리의 루트 노드에서 출발하여 주어진 노드까지의 경로를 찾는 프로그램을 작성하시오. 사전 탐색(pre-order traversal)을 사용하여 경로를 찾아야 합니다. 입력은 순서대로 노드 배열, 시작 노드, 대상 노드로 주어집니다.
 
 ## 제출 방법
-1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
-2. `tests/test_solution.cpp` 파일을 통해 테스트를 확인하세요.
-3. 완료되면, 변경 사항을 커밋하고 푸시하세요.
+1. `src/student.cpp` 파일을 수정하여 문제를 해결하세요.
+2. 완료되면, 변경 사항을 커밋하고 푸시하세요.
