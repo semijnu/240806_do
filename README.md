@@ -1,8 +1,12 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/u0MMcjni)
 # 과제 설명
 
 ## 문제 설명
-이곳에 문제 설명이 자동으로 추가됩니다.
+1. 자연어 문제 설명
+Student 클래스를 작성하고 다음을 수행하는 프로그램을 작성해 주세요. 
+- Student 클래스는 이름(name), 전공(major), 학번(id), 학점(grade)을 멤버 변수로 가진다.
+- Student 클래스는 기본 생성자와 이름, 전공, 학번, 학점을 인수로 받아 초기화하는 생성자를 가진다.
+- Student 클래스는 자신의 이름, 전공, 학번, 학점을 출력하는 showInfo() 메서드를 가진다.
+- main 함수에서 먼저 이름, 전공, 학번, 학점을 입력받고 이를 기반으로 Student 객체 std1을 생성한다. 그리고 std1의 정보를 showInfo() 메서드로 출력한다.
 
 ## 제출 방법
 1. `src/solution.cpp` 파일을 수정하여 문제를 해결하세요.
